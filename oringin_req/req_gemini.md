@@ -28,21 +28,21 @@ graph TD
     User[超级个体/AI] -->|1. Query| API
     User -->|2. Propose| ProposalMgr
     
-    subgraph SpecIndex System
+    subgraph SIS [SpecIndex System]
         API[API Gateway]
         ProposalMgr[Proposal Manager]
         Syncer[Index Syncer]
         
-        subgraph Layer 1: Governance
+        subgraph L1 [Layer 1: Governance]
             Pending[Pending Proposals]
             DiffEng[Diff Engine]
         end
         
-        subgraph Layer 2: Truth (Git)
+        subgraph L2 [Layer 2: Truth (Git)]
             YAML[YAML Files]
         end
         
-        subgraph Layer 3: Runtime (Cache)
+        subgraph L3 [Layer 3: Runtime (Cache)]
             SQLite[(SQLite DB)]
             NetworkX[Memory Graph]
         end
