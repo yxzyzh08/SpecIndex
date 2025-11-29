@@ -33,16 +33,16 @@ graph TD
         ProposalMgr[Proposal Manager]
         Syncer[Index Syncer]
         
-        subgraph L1 [Layer 1: Governance]
+        subgraph L1 ["Layer 1: Governance"]
             Pending[Pending Proposals]
             DiffEng[Diff Engine]
         end
         
-        subgraph L2 [Layer 2: Truth (Git)]
+        subgraph L2 ["Layer 2: Truth - Git"]
             YAML[YAML Files]
         end
         
-        subgraph L3 [Layer 3: Runtime (Cache)]
+        subgraph L3 ["Layer 3: Runtime - Cache"]
             SQLite[(SQLite DB)]
             NetworkX[Memory Graph]
         end
