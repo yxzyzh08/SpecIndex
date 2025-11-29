@@ -42,23 +42,12 @@
 
 ### 2.1 架构图示
 ```mermaid
-[Git Version Control]
-       │
-       ▼
-[Layer 1: Cold Storage (Truth)]
-(YAML Files - Human/Git Readable)
-       │
-       │ <--- [Index Syncer] (One-way Sync)
-       ▼
-[Layer 2: Hot Runtime (Cache)]
-(SQLite + NetworkX - Machine Speed)
-       │
-       ▲
-[Layer 3: Cognitive API Gateway]
-(FastAPI - Query / Propose / Audit)
-       │
-       ▼
-[External AI / User]
+graph TD
+    Git[Git Version Control] --> L1[Layer 1: Cold Storage Truth<br>YAML Files - Human/Git Readable]
+    L1 --> L2[Layer 2: Hot Runtime Cache<br>SQLite + NetworkX - Machine Speed]
+    Syncer[Index Syncer<br>One-way Sync] -.-> L2
+    L3[Layer 3: Cognitive API Gateway<br>FastAPI - Query / Propose / Audit] <--> L2
+    L3 <--> User[External AI / User]
 ```
 
 ### 2.2 存储层设计
